@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llama Habitat Information</title>
+     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #444;
+        }
+        .hero {
+            background: url('https://as1.ftcdn.net/v2/jpg/08/22/53/46/1000_F_822534678_dutESMXUTR4HsiOz5gGOozfV2eNtxcqf.jpg') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .gallery figure {
+            margin: 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .gallery figcaption {
+            margin-top: 10px;
+            text-align: center;
+            color: #666;
+        }
+        .submission {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .submission form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .submission input[type="file"],
+        .submission input[type="text"],
+        .submission input[type="submit"] {
+            margin: 5px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .submission input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submission input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .facts {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .facts ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        .facts li {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .back-link {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Amazing Llama Fan Site</h1>
+    </header>
+
+    <div class="content">
+        <h2>Llama Habitat Information</h2>
+        <img src="https://www.gettyimages.com.au/detail/photo/photo-bombed-by-a-llama-at-machu-picchu-royalty-free-image/1055958180?adppopup=true" alt="Llama in the Andes">
+        <p>Llamas are native to the high altitudes of the Andes mountains in South America. They have adapted to the rugged terrain and can be found at elevations ranging from 7,500 to 13,000 feet above sea level. These regions are characterized by rocky landscapes, sparse vegetation, and extreme weather conditions.</p>
+        <img src="https://www.gettyimages.com.au/detail/photo/three-tame-alpacas-wearing-bow-ties-royalty-free-image/1158872322?adppopup=true" alt="Llamas in natural habitat">
+        <p>In their natural habitat, llamas graze on the native grasses and plants that grow in the Andean highlands. They are well-suited to the cold, dry climate and can survive on the limited resources available in these harsh environments. Their thick wool coats provide insulation against the cold, and their padded feet help them navigate the rocky terrain.</p>
+        <a href="javascript:history.back()" class="back-link">Go Back</a>
+    </div>
+</body>
+</html>

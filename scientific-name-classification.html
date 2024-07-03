@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llamas Scientific Name and Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .classification {
+            margin-top: 20px;
+        }
+        .classification table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .classification th, .classification td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .classification th {
+            background-color: #f2f2f2;
+        }
+
+        header {
+            width: 100%;
+            background-color: #f9f9f9;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            color: white;
+            font-size: 2em;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: rgba(0,0,0,0.6);
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            /* background: white; */
+            color: #1d1f1d;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <header>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <!-- <li><a href="gallery.html">Image Gallery</a></li> -->
+                    <li><a href="diet.html">Diet</a></li>
+                    <li><a href="mating.html">Mating</a></li>
+                    <li><a href="habitat.html">Habitat</a></li>
+                    <li><a href="classification.html">Classification</a></li>
+                    <li><a href="anatomy.html">Anatomy and Biology</a></li>
+                    <li><a href="behavior.html">Behavior</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1>Llamas Scientific Name and Classification</h1>
+
+    <div class="classification">
+        <table>
+            <tr>
+                <th>Common Name</th>
+                <td>Llamas</td>
+            </tr>
+            <tr>
+                <th>Scientific Name</th>
+                <td>Lama glama</td>
+            </tr>
+            <!-- Other classification details -->
+        </table>
+    </div>
+
+    <div class="classification">
+        <h2>Scientific Classification Details</h2>
+        <p>Llamas belong to the family Camelidae, which also includes other camelids such as alpacas, guanacos, and vicuñas. They are classified as follows:</p>
+        <ul>
+            <li><strong>Kingdom:</strong> Animalia (animals)</li>
+            <li><strong>Phylum:</strong> Chordata (vertebrates)</li>
+            <li><strong>Class:</strong> Mammalia (mammals)</li>
+            <li><strong>Order:</strong> Artiodactyla (even-toed ungulates)</li>
+            <li><strong>Family:</strong> Camelidae (camels and relatives)</li>
+            <li><strong>Genus:</strong> Lama</li>
+            <li><strong>Species:</strong> Lama glama</li>
+        </ul>
+        <p>Llamas are domesticated South American camelids known for their wool and use as pack animals. The wild ancestor of the llama is the guanaco (Lama guanicoe), which is found in the wild in South America.</p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script>
+	new Vue({
+		el: '#app'
+	});
+</script>
+</body>
+</html>

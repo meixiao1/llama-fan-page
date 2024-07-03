@@ -31,9 +31,66 @@
         .classification th {
             background-color: #f2f2f2;
         }
+
+        header {
+            width: 100%;
+            background-color: #f9f9f9;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            color: white;
+            font-size: 2em;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: rgba(0,0,0,0.6);
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            /* background: white; */
+            color: #1d1f1d;
+        }
+
+
     </style>
 </head>
 <body>
+<div id="app">
+    <header>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <!-- <li><a href="gallery.html">Image Gallery</a></li> -->
+                    <li><a href="diet.html">Diet</a></li>
+                    <li><a href="mating.html">Mating</a></li>
+                    <li><a href="habitat.html">Habitat</a></li>
+                    <li><a href="classification.html">Classification</a></li>
+                    <li><a href="anatomy.html">Anatomy and Biology</a></li>
+                    <li><a href="behavior.html">Behavior</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <h1>Llamas Scientific Name and Classification</h1>
 
     <div class="classification">
@@ -46,42 +103,7 @@
                 <th>Scientific Name</th>
                 <td>Lama glama</td>
             </tr>
-            <tr>
-                <th>Primary Species</th>
-                <td>Lama glama</td>
-            </tr>
-            <tr>
-                <th>Sub-species</th>
-                <td>Lama glama guanicoe (wild guanaco)</td>
-            </tr>
-            <tr>
-                <th>Kingdom</th>
-                <td>Animalia</td>
-            </tr>
-            <tr>
-                <th>Phylum</th>
-                <td>Chordata</td>
-            </tr>
-            <tr>
-                <th>Class</th>
-                <td>Mammalia</td>
-            </tr>
-            <tr>
-                <th>Order</th>
-                <td>Artiodactyla</td>
-            </tr>
-            <tr>
-                <th>Family</th>
-                <td>Camelidae</td>
-            </tr>
-            <tr>
-                <th>Genus</th>
-                <td>Lama</td>
-            </tr>
-            <tr>
-                <th>Species</th>
-                <td>Lama glama</td>
-            </tr>
+            <!-- Other classification details -->
         </table>
     </div>
 
@@ -99,6 +121,13 @@
         </ul>
         <p>Llamas are domesticated South American camelids known for their wool and use as pack animals. The wild ancestor of the llama is the guanaco (Lama guanicoe), which is found in the wild in South America.</p>
     </div>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script>
+	new Vue({
+		el: '#app'
+	});
+</script>
 </body>
 </html>

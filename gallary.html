@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llama Image Gallery</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-items: center;
+            width: 100%;
+            max-width: 800px;
+        }
+        .gallery figure {
+            margin: 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .gallery figcaption {
+            margin-top: 10px;
+            text-align: center;
+            color: #666;
+        }
+        .submission {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .submission form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .submission input[type="file"],
+        .submission input[type="text"],
+        .submission input[type="submit"] {
+            margin: 5px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .submission input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submission input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .back-link {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>Llama Image Gallery</h1>
+    <div class="gallery">
+        <figure v-for="(image, index) in images" :key="index">
+            <img :src="image.src" :alt="`Llama ${index + 1}`">
+            <figcaption>{{ image.caption }}</figcaption>
+        </figure>
+    </div>
+
+    <div class="submission">
+        <h3>Submit Your Own Llama Pictures</h3>
+        <form @submit.prevent="submitPicture">
+            <input type="file" @change="previewImage" accept="image/*" required>
+            <input type="text" v-model="caption" placeholder="Enter a caption" required>
+            <input type="submit" value="Submit">
+        </form>
+        <div v-if="imageData">
+            <h3>Image Preview:</h3>
+            <img :src="imageData" alt="Preview" style="width: 300px; height: 200px; object-fit: cover; border-radius: 5px;">
+            <p>{{ caption }}</p>
+        </div>
+    </div>
+
+    <a href="javascript:history.back()" class="back-link">Go Back</a>
+</div>
+
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			images: [
+				{ src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Llamas%2C_Vernagt-Stausee%2C_Italy.jpg/330px-Llamas%2C_Vernagt-Stausee%2C_Italy.jpg', caption: 'Llama enjoying by the lake.' },
+				{ src: 'https://www.thoughtco.com/thmb/ts8pKkuPBCnjvqKsZaSz6ZdvpBc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-468364850-657f39bc70054f1bae3649caa072a7bd.jpg', caption: 'A curious llama looking straight at the camera.' },
+				{ src: 'https://upload.wikimedia.org/wikipedia/commons/3/37/A_Quechua_girl_and_her_Llama.jpg', caption: 'Llama with a girl.' },
+				{ src: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Domestic_llama_%282009-05-19%29.jpg', caption: 'Llama in a park.' }
+			],
+			imageData: null,
+			caption: ''
+		},
+		methods: {
+			previewImage(event) {
+				const file = event.target.files[0];
+				if (file && file.type.startsWith('image/')) {
+					const reader = new FileReader();
+					reader.onload = e => {
+						this.imageData = e.target.result;
+					};
+					reader.readAsDataURL(file);
+				} else {
+					this.imageData = null;
+				}
+			},
+			submitPicture() {
+				if (this.imageData && this.caption) {
+					this.images.push({ src: this.imageData, caption: this.caption });
+					this.imageData = null;
+					this.caption = '';
+				}
+			}
+		}
+	});
+</script>
+</body>
+</html>
